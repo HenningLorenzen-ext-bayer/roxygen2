@@ -1,21 +1,15 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/rocker-org/devcontainer-templates/tree/main/src/r2u
 {
-	"name": "R (r2u and bspm configured)",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"name": "R (r-ver:4)",
+	"image": "ghcr.io/rocker-org/devcontainer/r-ver:4",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		// A Feature to configure R on Ubuntu. More info: https://github.com/rocker-org/devcontainer-features/tree/main/src/r-apt.
-		"ghcr.io/rocker-org/devcontainer-features/r-apt:0": {
-			"vscodeRSupport": "full",
-			"installDevTools": true,
-			"installRMarkdown": true,
-			"installRadian": true,
-			"installVscDebugger": true,
-			"installBspm": true
+		"ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+			"pakVersion": "stable",
+			"installSystemRequirements": "true",
+			"packages" : "roxygen2"
 		}
 	},
 
